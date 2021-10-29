@@ -1,5 +1,5 @@
 const express = require('express');
-const {nuevaBoleta} = require('./consultas');
+const {nuevaBoleta, listarboleta, modificarboletas } = require('./consultas');
 const app = express();
 
 //body parser con express
@@ -15,3 +15,17 @@ app.post("/boletas", async (req,res)=>{
     const respuesta = await nuevaBoleta(boleta)
     res.send(respuesta)
 });
+
+//Consultar Boletas
+app.get("/boletas", async (req, res) =>{
+    const resultado = await listarboleta( )
+    res.send(resultado)
+})
+
+//Editar boletas
+app.put("/boletas/:id", async (req,res) =>{
+    let id = req.params.id
+    const boleta = req.body
+    const resultado = await modificarboletas(id,boleta)
+    res.send(resultado)
+})
