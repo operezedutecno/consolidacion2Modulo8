@@ -1,0 +1,21 @@
+//Pedro
+Crear Proyecto y repositorio GIT. (Incluir .gitignore)
+Crear tabla de clientes
+Registrar 3 clientes
+
+//Mauricio
+Crear tabla de boletas
+Crear ruta API para Registrar Boletas
+
+//Francisco
+Crear ruta API para Listar Boletas
+Crear ruta API para Editar Boletas
+
+
+Crear ruta API para Eliminar Boletas
+Crear ruta API para Registrar Clientes
+
+
+Crear ruta API para Listar Clientes
+Crear ruta API para Editar Clientes
+Crear ruta API para Eliminar Clientes
