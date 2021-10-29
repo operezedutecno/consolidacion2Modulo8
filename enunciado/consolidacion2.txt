@@ -5,7 +5,7 @@ Registrar 3 clientes
 
 //Mauricio
 Crear tabla de boletas -ok
-Crear ruta API para Registrar Boletas
+Crear ruta API para Registrar Boletas -ok
 
 //Francisco
 Crear ruta API para Listar Boletas
