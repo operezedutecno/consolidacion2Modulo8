@@ -1,5 +1,5 @@
 const express = require('express');
-const {nuevaBoleta, listarboleta, modificarboletas } = require('./consultas');
+const {nuevaBoleta, listarboleta, modificarboletas, eliminarBoletas } = require('./consultas');
 const app = express();
 
 //body parser con express
@@ -27,5 +27,12 @@ app.put("/boletas/:id", async (req,res) =>{
     let id = req.params.id
     const boleta = req.body
     const resultado = await modificarboletas(id,boleta)
+    res.send(resultado)
+})
+
+//Eliminar boletas
+app.delete("/boletas/:id", async (req,res) =>{
+    let id = req.params.id
+    const resultado = await eliminarBoletas(id)
     res.send(resultado)
 })

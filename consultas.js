@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 //Config Pool
 const pool = new Pool({
     user: 'postgres',
-    password:'Pako280279*',
+    password:'postgres',
     database:'ventas',
     host:'localhost',
     port:'5432',
@@ -62,4 +62,18 @@ let modificarboletas = async (id, nueva_boleta) => {
     }
 }
 
-module.exports = { nuevaBoleta, listarboleta, modificarboletas }
+let eliminarBoletas = async (id) => {
+    try {
+        let consulta = {
+            text: `DELETE FROM boletas WHERE id = $1 RETURNING *`,
+            values: [id]
+        }
+        const resultado = await pool.query(consulta)
+        return resultado.rows
+    }catch (error) {    
+        return {error: 'error al eliminar la boleta'}
+
+    }
+}
+
+module.exports = { nuevaBoleta, listarboleta, modificarboletas, eliminarBoletas }
