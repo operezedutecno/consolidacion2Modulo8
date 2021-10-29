@@ -4,7 +4,7 @@ Crear tabla de clientes
 Registrar 3 clientes
 
 //Mauricio
-Crear tabla de boletas
+Crear tabla de boletas -ok
 Crear ruta API para Registrar Boletas
 
 //Francisco
