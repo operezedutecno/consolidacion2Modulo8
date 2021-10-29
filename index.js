@@ -1,5 +1,5 @@
 const express = require('express');
-const {nuevaBoleta, listarboleta, modificarboletas, eliminarBoletas } = require('./consultas');
+const {nuevaBoleta, listarboleta, modificarboletas, eliminarBoletas, nuevoCliente, listarClientes, modificarClientes, eliminarClientes } = require('./consultas');
 const app = express();
 
 //body parser con express
@@ -34,5 +34,34 @@ app.put("/boletas/:id", async (req,res) =>{
 app.delete("/boletas/:id", async (req,res) =>{
     let id = req.params.id
     const resultado = await eliminarBoletas(id)
+    res.send(resultado)
+})
+
+
+//Registrar Clientes
+app.post("/clientes", async (req,res)=>{
+    const cliente = req.body
+    const respuesta = await nuevoCliente(cliente)
+    res.send(respuesta)
+});
+
+//Consultar Clientes
+app.get("/clientes", async (req, res) =>{
+    const resultado = await listarClientes( )
+    res.send(resultado)
+})
+
+//Editar Clientes
+app.put("/clientes/:id", async (req,res) =>{
+    let id = req.params.id
+    const cliente = req.body
+    const resultado = await modificarClientes(id, cliente)
+    res.send(resultado)
+})
+
+//Eliminar clientes
+app.delete("/clientes/:id", async (req,res) =>{
+    let id = req.params.id
+    const resultado = await eliminarClientes(id)
     res.send(resultado)
 })
